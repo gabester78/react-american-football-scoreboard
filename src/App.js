@@ -27,6 +27,32 @@ function App() {
     }
   };
 
+  const quarter = () => {
+    const qCounter = document.querySelector(".quarter__value");
+    if (qCounter.textContent === "1") {
+      qCounter.textContent = "2";
+    } else if (qCounter.textContent === "2") {
+      qCounter.textContent = "3";
+    } else if (qCounter.textContent === "3") {
+      qCounter.textContent = "4";
+    } else if (qCounter.textContent === "4") {
+      qCounter.textContent = "1";
+    }
+  };
+
+  const down = () => {
+    const dCounter = document.querySelector(".down__value");
+    if (dCounter.textContent === "1") {
+      dCounter.textContent = "2";
+    } else if (dCounter.textContent === "2") {
+      dCounter.textContent = "3";
+    } else if (dCounter.textContent === "3") {
+      dCounter.textContent = "4";
+    } else if (dCounter.textContent === "4") {
+      dCounter.textContent = "1";
+    }
+  };
+
   return (
     <div className="container">
       <section className="scoreboard">
@@ -47,6 +73,7 @@ function App() {
         <BottomRow />
       </section>
       <section className="buttons">
+        <button onClick={down}>Change Down</button>
         <div className="homeButtons">
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button className="homeButtons__touchdown" onClick={score}>
@@ -64,6 +91,7 @@ function App() {
             Away Field Goal
           </button>
         </div>
+        <button onClick={quarter}>Change Quarter</button>
       </section>
     </div>
   );
